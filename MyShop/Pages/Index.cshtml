@@ -1,0 +1,207 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<script src="/js/search.js"></script>
+
+<script src="js/site.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+@* 
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Cressida" class="logo-image">
+            </div>
+            <div class="site-name">Cressida</div>
+            <div class="auth-buttons">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Если пользователь авторизован, приветствуем -->
+                    <span>Здравствуйте, @User.Identity.Name</span>
+                    <a href="/Cart" class="auth-button">Корзина</a>
+                    <form method="post" action="/Index" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="auth-button">Выйти</button>
+                    </form>
+                }
+                else
+                {
+                    <!-- Если не авторизован - показываем кнопки -->
+                    <a href="/Login" class="auth-button">Вход</a>
+                    <a href="/Register" class="auth-button">Регистрация</a>
+                    <a href="/Cart" class="auth-button">Корзина</a>
+                }
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Сервис</a>
+            <a href="/Certificates">Подарочные сертификаты</a>
+            <a href="/Production">Производство</a>
+            <form class="search-form" onsubmit="return false;">
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Поиск по сайту"
+                       aria-label="Поиск по сайту"
+                       oninput="performSearch(this.value)">
+                <div id="searchResults" class="search-results"></div>
+            </form>
+
+        </nav>
+    </header> *@
+
+
+
+    <div class="main-container">
+        <aside class="content">
+
+        @if (User.Identity.IsAuthenticated)
+            {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+        <main>
+                <h3>Добро пожаловать в РИВ ГОШ!</h3>
+                <div style="overflow: auto;">
+                    <img src="images/Riv.png" width="200" alt="РИВ ГОШ" style="style=" float: right; margin-left: 20px; width: 300px; height: auto;">
+                    <p>
+                        <b>РИВ ГОШ</b> — это интернет-магазин, который предлагает широкий выбор парфюмерии и косметики от ведущих мировых брендов. Мы гарантируем высокое качество продукции и оригинальность товаров.
+                    </p>
+                </div>
+                <h2>Наш ассортимент</h2>
+                <p>
+                    У нас вы найдете:
+                </p>
+                <ul>
+                    <li><b>Декоративная косметика</b>: помады, тональные кремы, румяна и многое другое.</li>
+                    <li><b>Парфюмерия</b>: женские, мужские и унисекс ароматы для любого случая.</li>
+                    <li><b>Средства по уходу</b>: для лица, тела и волос от известных брендов.</li>
+                </ul>
+                <p>Мы регулярно обновляем наш каталог, чтобы наши клиенты могли наслаждаться новинками и последними трендами в мире косметики. Заходите в раздел <a href="/Catalog">Каталог</a> и выберите то, что подходит именно вам!</p>
+                <h2>Преимущества покупок в РИВ ГОШ</h2>
+                <ul>
+                    <li>📦 Удобная доставка по всей России.</li>
+                    <li>🛍️ Широкий выбор товаров от известных брендов.</li>
+                    <li>🎁 Специальные предложения и акции каждую неделю.</li>
+                    <li>💳 Легкий и безопасный процесс оплаты.</li>
+                </ul>
+                <p align="center"> <h2 align="center">"РИВ ГОШ — создаем вдохновение вместе!"</h2>.</p>
+                <table border="3" cellpadding="20" cellspacing="5">
+                    <tr>
+                        <td colspan="6" align="center"><a>Косметика</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><a>Уходовая косметика</a></td>
+                        <td colspan="2" align="center"><a>Декоративная косметика </a></td>
+                    </tr>
+                    <tr>
+                        <td>бальзам для губ</td>
+                        <td>пенка для лица</td>
+                        <td>помада</td>
+                        <td>хайлайтер</td>
+                    </tr>
+                    <tr>
+                        <td>крем для рук</td>
+                        <td>скраб для лица</td>
+                        <td>румяна</td>
+                        <td>тональный крем</td>
+                    </tr>
+                </table>
+
+                <b><p>Парфюм:</b>
+                <ul type="circle">
+                    <li> мужской
+                    <li> женский
+                    <li> унисекс
+                </ul>
+                <ol type="a">
+                    <li> запах лаванды
+                    <li> запах шоколада
+                    <li> запах роз
+                </ol>
+                <ol type="A">
+                    <li> Туалетная вода
+                    <li>
+                        Парфюм:
+                        <ol type="a">
+                            <li> со скидкой
+                            <li> без скидки
+                        </ol>
+                    <li> Духи
+                </ol></p>
+
+        </main>
+
+
+
+        <aside class="image-container">
+            <div class="slider">
+                <div class="slides">
+                    <!-- Фото 1 -->
+                    <div class="slide">
+                        <img src="images/product1.png" alt="Фото 1">
+                    </div>
+                    <!-- Фото 2 -->
+                    <div class="slide">
+                        <img src="images/product2.png" alt="Фото 2">
+                    </div>
+                    <!-- Фото 3 -->
+                    <div class="slide">
+                            <img src="images/губ3.png" alt="Фото 3">
+                    </div>
+                    <!-- Фото 4 -->
+                    <div class="slide">
+                            <img src="images/губ4.png" alt="Фото 4">
+                    </div>
+                    <!-- Фото 5 -->
+                    <div class="slide">
+                        <img src="images/product5.png" alt="Фото 5">
+                    </div>
+                    <!-- Фото 6 -->
+                    <div class="slide">
+                            <img src="images/губ6.png" alt="Фото 6">
+                    </div>
+@*                     <div class="slides">
+                        @foreach (var product in Model.Products)
+                        {
+                            <div class="slide">
+                                <img src="/@product.ImagePath" alt="@product.Name">
+                            </div>
+                        }
+                    </div> *@
+                </div>
+                <!-- Кнопки навигации -->
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </aside>
+
+
+</body>
+</html>

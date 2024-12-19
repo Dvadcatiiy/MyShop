@@ -1,0 +1,132 @@
+﻿@page
+@model MyShop.Pages.ContactsModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+@* 
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Cressida" class="logo-image">
+            </div>
+            <div class="site-name">Cressida</div>
+            <div class="auth-buttons">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Если пользователь авторизован, приветствуем -->
+                    <span>Здравствуйте, @User.Identity.Name</span>
+                    <form method="post" action="/Index" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="auth-button">Выйти</button>
+                    </form>
+                }
+                else
+                {
+                    <!-- Если не авторизован - показываем кнопки -->
+                    <a href="/Login" class="auth-button">Вход</a>
+                    <a href="/Register" class="auth-button">Регистрация</a>
+                }
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Сервис</a>
+            <a href="/Certificates">Подарочные сертификаты</a>
+            <a href="/Production">Производство</a>
+            <form class="search-form" action="search.htm" method="get">
+                <input type="text" name="q" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+                <button type="submit">Найти</button>
+            </form>
+        </nav>
+    </header> *@
+
+
+    <div class="main-container">
+        <aside class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        <div class="contact-form">
+            <h2>Напишите нам</h2>
+            <form>
+                <div class="form-row">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com">
+                </div>
+
+                <div class="form-row">
+                    <label for="subject">Тема:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Введите тему сообщения">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+
+                <div class="form-row">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+
+                <h3 align="center">Контактная информация</h3>
+                <p>
+                    Электронный адрес: shopadmin@rivegauche.ru<br>
+                    Телефон: 8(800)234-44-60 (с 9 до 21 ежедневно)<br>
+                    Пресс-служба РИВ ГОШ: n.kaplina@rivegauche.ru<br>
+                    Помощь по любым вопросам: 8(812)200-25-15<br>
+                    Адрес:<br>
+                </p>
+        </div>
+
+        <div class="map-container">
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/search/%D0%A0%D0%B8%D0%B2%20%D0%93%D0%BE%D1%88/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Рив Гош в Москве</a><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Москва</a><iframe src="https://yandex.ru/map-widget/v1/?display-text=%D0%A0%D0%B8%D0%B2%20%D0%93%D0%BE%D1%88&ll=37.600456%2C55.734618&mode=search&sll=37.617700%2C55.755863&sspn=1.338959%2C0.476275&text=%7B%22text%22%3A%22%D0%A0%D0%B8%D0%B2%20%D0%93%D0%BE%D1%88%22%2C%22what%22%3A%5B%7B%22attr_name%22%3A%22chain_id%22%2C%22attr_values%22%3A%5B%22647186032%22%5D%7D%5D%7D&z=11" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allowfullscreen="true">
+            </iframe>
+        </div>
+    </div>
+
+
+    <footer align="center">
+        <p>© 2024 РИВ ГОШ. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

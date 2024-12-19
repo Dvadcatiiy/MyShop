@@ -1,0 +1,158 @@
+﻿@page
+@model MyShop.Pages.ServiceModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+@* 
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Cressida" class="logo-image">
+            </div>
+            <div class="site-name">Cressida</div>
+            <div class="auth-buttons">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Если пользователь авторизован, приветствуем -->
+                    <span>Здравствуйте, @User.Identity.Name</span>
+                    <form method="post" action="/Index" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="auth-button">Выйти</button>
+                    </form>
+                }
+                else
+                {
+                    <!-- Если не авторизован - показываем кнопки -->
+                    <a href="/Login" class="auth-button">Вход</a>
+                    <a href="/Register" class="auth-button">Регистрация</a>
+                }
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Сервис</a>
+            <a href="/Certificates">Подарочные сертификаты</a>
+            <a href="/Production">Производство</a>
+            <form class="search-form" action="search.htm" method="get">
+                <input type="text" name="q" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+                <button type="submit">Найти</button>
+            </form>
+        </nav>
+    </header> *@
+
+
+    <div class="main-container">
+        <aside class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+
+        <main>
+                <h1>Сделайте этот Новый год особенным!</h1>
+                <p>
+                    Уважаемые клиенты! В этом сезоне мы рады представить нашу
+                    <strong>новогоднюю программу лояльности</strong>, которая порадует вас
+                    многочисленными привилегиями и подарками. Присоединяйтесь к нашей
+                    программе и наслаждайтесь эксклюзивными предложениями, созданными
+                    специально для вас.
+                </p>
+
+                <h2>Преимущества программы:</h2>
+                <ul class="loyalty-features">
+                    <li>🎁 <strong>Подарки к каждому заказу!</strong> - Получайте приятные сюрпризы с каждой покупкой.</li>
+                    <li>💳 <strong>Скидки до 30%</strong> - Специальные предложения для участников программы.</li>
+                    <li>🎉 <strong>Участие в розыгрышах призов!</strong> - Шанс выиграть косметику и аксессуары.</li>
+                    <li>📦 <strong>Бесплатная доставка</strong> на все заказы от 3000 рублей.</li>
+                    <li>🌟 <strong>Персональные рекомендации</strong> по уходу и стилю от наших экспертов.</li>
+                </ul>
+
+                <p>
+                    Не упустите возможность сделать этот Новый год особенным.
+                    <strong>Присоединяйтесь к нам!</strong> Для участия в программе просто
+                    создайте учетную запись на нашем сайте или зайдите в личный кабинет.
+                </p>
+
+                <p>
+                    Благодарим вас за то, что выбираете <strong>РИВ ГОШ</strong>.
+                    Мы стремимся делать ваши покупки не только удобными, но и радостными!
+                </p>
+
+                <h1>Новогодние преимущества</h1>
+
+                <div>
+                    <button class="cloud-button">
+                        <strong>Подарки к каждому заказу!</strong>
+                        Получайте приятные сюрпризы с каждой покупкой.
+                    </button>
+
+                    <button class="cloud-button">
+                        <strong>Скидки до 30%</strong>
+                        Специальные предложения для участников программы.
+                    </button>
+
+                    <button class="cloud-button">
+                        <strong>Участие в розыгрышах призов!</strong>
+                        Шанс выиграть косметику и аксессуары.
+                    </button>
+
+                    <button class="cloud-button">
+                        <strong>Бесплатная доставка</strong>
+                        На все заказы от 3000 рублей.
+                    </button>
+
+                    <button class="cloud-button">
+                        <strong>Персональные рекомендации</strong>
+                        По уходу и стилю от наших экспертов.
+                    </button>
+                </div>
+        </main>
+
+
+            <aside class="image-container">
+                <a href="https://www.dior.com/ru_ru">
+                    <img src="/images/dior.2.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://estel.pro/">
+                    <img src="/images/gucci.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.calvinklein.de/EN/womens-bags">
+                    <img src="/images/ck.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+            </aside>
+    </div>
+
+    <footer align="center">
+        <p>© 2024 РИВ ГОШ. Все права защищены.</p>
+    </footer>
+
+
+</body>
+</html>

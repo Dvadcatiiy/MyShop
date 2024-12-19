@@ -1,0 +1,90 @@
+﻿@page
+@model MyShop.Pages.AboutModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+    <div class="main-container">
+    <aside class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+
+        <main>
+                <h3>О нас</h3>
+                <p>
+                    Добро пожаловать в <strong>РИВ ГОШ</strong> — ваш надежный магазин косметики и парфюмерии. Мы предлагаем широкий выбор продуктов от ведущих мировых брендов, чтобы вы могли найти всё необходимое для ухода за собой и создания незабываемого образа.
+                </p>
+                <img src="/images/Й.webp" alt="Косметика РИВ ГОШ" class="about-img">
+
+                <h2>Наша миссия</h2>
+                <p>
+                    Наша основная цель — помочь каждому человеку почувствовать себя уверенно и красиво. Мы верим, что хорошая косметика не должна быть доступна только избранным. Поэтому мы работаем только с проверенными производителями, предлагая качественные и оригинальные товары по разумным ценам.
+                </p>
+
+                <h2>Почему выбирают нас?</h2>
+                <ul>
+                    <li><strong>Широкий ассортимент:</strong> Вы найдёте у нас всё — от декоративной косметики до средств по уходу за кожей и волосами.</li>
+                    <li><strong>Качество:</strong> Мы гарантируем, что вся продукция оригинальная и прошла соответствующие проверки.</li>
+                    <li><strong>Удобство:</strong> Заказывайте онлайн с доставкой по всей России — мы делаем покупки проще!</li>
+                    <li><strong>Профессиональные консультации:</strong> Наша команда всегда готова помочь вам с выбором, предоставляя полезные советы и рекомендации.</li>
+                </ul>
+
+                <h2>Свяжитесь с нами</h2>
+                <p>
+                    Если у вас есть вопросы или пожелания, не стесняйтесь обращаться в нашу службу поддержки. Мы всегда рады помочь вам выбрать лучшие продукты и ответить на все ваши вопросы!
+                </p>
+            </main>
+
+
+            <aside class="image-container">
+                <a href="https://www.dior.com/ru_ru">
+                    <img src="/images/dior.2.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.gucci.com/">
+                    <img src="/images/gucci.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.calvinklein.de/EN/womens-bags">
+                    <img src="/images/ck.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+            </aside>
+        </aside>
+
+
+    <footer align="center">
+        <p>© 2024 РИВ ГОШ. Все права защищены.</p>
+    </footer>
+
+
+</body>
+</html>

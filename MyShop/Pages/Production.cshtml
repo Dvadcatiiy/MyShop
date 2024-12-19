@@ -1,0 +1,149 @@
+﻿@page
+@model MyShop.Pages.ProductionModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    @* <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Cressida" class="logo-image">
+            </div>
+            <div class="site-name">Cressida</div>
+            <div class="auth-buttons">
+                <!-- Кнопки Вход и Авторизация -->
+                <label for="login-toggle" class="auth-button">Вход</label>
+                <label for="register-toggle" class="auth-button">Регистрация</label>
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Сервис</a>
+            <a href="/Certificates">Подарочные сертификаты</a>
+            <a href="/Production">Производство</a>
+            <form class="search-form" action="search.htm" method="get">
+                <input type="text" name="q" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+                <button type="submit">Найти</button>
+            </form>
+        </nav>
+
+        <!-- Чекбоксы для управления отображением меню -->
+        <input type="checkbox" id="login-toggle" class="menu-toggle">
+        <div class="auth-menu">
+            <label for="login-toggle" class="close-menu">&times;</label>
+            <form>
+                <h2>Вход</h2>
+                <label for="login-login">Логин:</label>
+                <input type="text" id="login-login" name="login" required>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+
+        <input type="checkbox" id="register-toggle" class="menu-toggle">
+        <div class="auth-menu">
+            <label for="register-toggle" class="close-menu">&times;</label>
+            <form>
+                <h2>Регистрация</h2>
+                <label for="register-lastname">Фамилия:</label>
+                <input type="text" id="register-lastname" name="lastname" required>
+                <label for="register-firstname">Имя:</label>
+                <input type="text" id="register-firstname" name="firstname" required>
+                <label for="register-login">Логин:</label>
+                <input type="text" id="register-login" name="login" required>
+                <label for="register-password">Пароль:</label>
+                <input type="password" id="register-password" name="password" required>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="policy-agreement" name="policy" required>
+                    <label for="policy-agreement">Я соглашаюсь с политикой конфиденциальности</label>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </header> *@
+
+
+    <div class="main-container">
+        <aside class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+
+        <main>
+                <div class="promotion-container">
+                    <div class="promotion-item">
+                        <h2 class="promotion-title">Супер распродажа до 50%!</h2>
+                        <img src="~/images/50.webp" p class="promotion-description"> <p>Скидки на популярные продукты от лучших брендов. Не упустите возможность обновить свою косметичку.</p></p>
+                        <a href="/Catalog" class="promotion-button">Посмотреть товары</a>
+                    </div>
+
+                    <div class="promotion-item">
+                        <h2 class="promotion-title">Подарки к каждому заказу!</h2>
+                        <img src="~/images/gift.webp" p class="promotion-description"> <p>При покупках на сумму от 3000 рублей вы получаете эксклюзивный подарок!</p></p>
+                        <a href="/Service" class="promotion-button">Узнать больше</a>
+                    </div>
+
+                    <div class="promotion-item">
+                        <h2 class="promotion-title">Купи 2 — получи 1 в подарок!</h2>
+                        <img src="~/images/1+1.webp" p class="promotion-description"><p>Акция на выбранные товары. Купите два продукта и получите третий бесплатно!</img></p>
+                        <a href="/Catalog" class="promotion-button">Смотреть акции</a>
+                    </div>
+
+                    <div class="promotion-item">
+                        <h2 class="promotion-title">Только в этом месяце - бесплатная доставка!</h2>
+                        <img src="~/images/доставка.webp" p class="promotion-description"><p>На все заказы от 2000 рублей. Наслаждайтесь удобством покупок с бесплатной доставкой.</img></p>
+                        <a href="/Catalog" class="promotion-button">Заказать сейчас</a>
+                    </div>
+                </div>
+        </main>
+
+
+            <aside class="image-container">
+                <a href="https://www.dior.com/ru_ru">
+                    <img src="/images/dior.2.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.gucci.com/">
+                    <img src="/images/gucci.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.calvinklein.de/EN/womens-bags">
+                    <img src="/images/ck.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+            </aside>
+    </div>
+
+    <footer align="center">
+        <p>© 2024 РИВ ГОШ. Все права защищены.</p>
+    </footer>
+
+
+</body>
+</html>

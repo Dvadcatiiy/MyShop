@@ -1,0 +1,165 @@
+﻿@page
+@model MyShop.Pages.CertificatesModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РИВ ГОШ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Добавленные стили для карточек */
+        .card-container {
+            display: flex;
+            justify-content: space-around; /* Распределяет карточки по горизонтали */
+            margin-top: 20px; /* Отступ сверху */
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Фиксированная ширина карточки */
+            height: 200px; /* Фиксированная высота карточки */
+            margin: 10px; /* Отступ между карточками */
+        }
+
+            .card img {
+                max-width: 100%; /* Максимальная ширина изображения 100% от родительского контейнера */
+                height: auto; /* Автоматическая высота для сохранения пропорций */
+                border-radius: 5px;
+                margin-bottom: 10px; /* Отступ между изображением и заголовком */
+            }
+
+            .card h3 {
+                font-size: 16px; /* Размер шрифта заголовка */
+                margin: 0; /* Убираем отступы по умолчанию */
+            }
+    </style>
+</head>
+<body>
+
+@* 
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Cressida" class="logo-image">
+            </div>
+            <div class="site-name">Cressida</div>
+            <div class="auth-buttons">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Если пользователь авторизован, приветствуем -->
+                    <span>Здравствуйте, @User.Identity.Name</span>
+                    <form method="post" action="/Index" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="auth-button">Выйти</button>
+                    </form>
+                }
+                else
+                {
+                    <!-- Если не авторизован - показываем кнопки -->
+                    <a href="/Login" class="auth-button">Вход</a>
+                    <a href="/Register" class="auth-button">Регистрация</a>
+                }
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Сервис</a>
+            <a href="/Certificates">Подарочные сертификаты</a>
+            <a href="/Production">Производство</a>
+            <form class="search-form" action="search.htm" method="get">
+                <input type="text" name="q" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+                <button type="submit">Найти</button>
+            </form>
+        </nav>
+    </header> *@
+
+
+    <div class="main-container">
+        <aside class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+
+        <main>
+                <h3>Подарочные наборы</h3>
+                <p>
+                    Подарочные наборы от <strong>РИВ ГОШ</strong> — это идеальный способ порадовать близких и друзей. Мы предлагаем разнообразные композиции, которые включают лучшие продукты из мира косметики и парфюмерии. Наша цель — сделать ваши подарки незабываемыми, добавив в них частичку настоящей красоты и заботы.
+                </p>
+                <p>
+                    В каждом наборе собраны тщательно отобранные элементы, которые идеально дополняют друг друга. От изысканных парфюмов до средств по уходу за кожей — здесь каждый сможет найти что-то по душе. Подарочные наборы подойдут для любого повода: дни рождения, юбилеи, праздники и просто как приятный сюрприз без повода!
+                </p>
+                <p>
+                    Особое внимание мы уделяем упаковке: наши наборы оформлены с любовью и заботой, что делает их настоящим произведением искусства. Подарите не просто косметику, а целый опыт, который порадует и вдохновит на новые открытия!
+                </p>
+                <p>
+                    Изучите нашу коллекцию подарочных наборов и выберите идеальный вариант, который станет отличным дополнением к любой торжественной атмосфере. Каждый набор — это не только красиво упакованные продукты, но и возможность сделать счастливыми людей, которых вы любите.
+                </p>
+
+
+            <!-- Добавление карточек -->
+            <div class="card-container">
+                <div class="card">
+                        <a href="https://rivegauche.ru/product/jo-malone-wild-bluebell-shower-gel-and-english-pear-freesia-travel-candle-set">
+                            <img src="/images/парфюмерный набор.jpg" alt="Подарочная карта №1">
+                        <h3>Парфюмерный набор</h3>
+                </div>
+                <div class="card">
+                        <a href="https://rivegauche.ru/product/darphin-eclat-sublime-smooth-replenish-skin-set">
+                    <img src="/images/уход.webp" alt="Подарочная карта №2">
+                    <h3>Укрепляющий набор</h3>
+                </div>
+                <div class="card">
+                        <a href="https://rivegauche.ru/product/riv-gosh-box-2024-advent">
+                    <img src="/images/адвент.jpg" alt="Подарочная карта №3">
+                    <h3>Адвент календарь</h3>
+                </div>
+            </div>
+        </main>
+
+
+        <aside class="image-container">
+                <a href="https://www.dior.com/ru_ru">
+                    <img src="/images/dior.2.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.gucci.com/">
+                    <img src="/images/gucci.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+
+                <a href="https://www.calvinklein.de/EN/womens-bags">
+                    <img src="/images/ck.jpg" alt="Промо 2" style="width: 150px; height: auto; margin-right: 10px;">
+                </a>
+        </aside>
+    </aside>
+
+    <footer align="center">
+        <p>© 2024 РИВ ГОШ. Все права защищены.</p>
+    </footer>
+
+
+</body>
+</html>
